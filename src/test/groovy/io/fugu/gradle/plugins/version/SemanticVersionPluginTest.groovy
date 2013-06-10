@@ -23,8 +23,17 @@ final class SemanticVersionPluginTest {
 	}
 
 	@Test
-	public void versionPluginAssignmentTest() {
+	public void testVersionPluginAssignment() {
 		project.apply  plugin: 'semver'
 		assertTrue(project.version instanceof SemanticVersion)
+	}
+
+	@Test
+	public void testTasksDefined() {
+		assertNull(project.tasks.findByName('release'))
+		assertNull(project.tasks.findByName('printVersion'))
+		project.apply  plugin: 'semver'
+		assertNotNull(project.tasks.findByName('release'))
+		assertNotNull(project.tasks.findByName('printVersion'))
 	}
 }
