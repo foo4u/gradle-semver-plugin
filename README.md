@@ -30,10 +30,10 @@ build script and apply the plugin:
 ``` groovy
 buildscript {
     repositories {
-        maven { url "http://repo.fugu.io/artifactory/plugins-snapshot" }
+        maven { url "http://repo.fugu.io/artifactory/plugins-release" }
     }
     dependencies {
-        classpath "io.fugu.gradle:gradle-semver-plugin:0.1.0-SNAPSHOT"
+        classpath "io.fugu.gradle:gradle-semver-plugin:0.1.0"
     }
 }
 
