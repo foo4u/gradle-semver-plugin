@@ -13,8 +13,9 @@ class SemanticVersion {
 	String snapshotPostfix = "-SNAPSHOT"
 
 	void configure(Map<String,?> map) {
-		this.major = map.major ? map.major : 0;
-		this.minor = map.minor ? map.minor : 0;
+		this.major = map.major ? map.major : 0
+		this.minor = map.minor ? map.minor : 0
+		this.revision = map.revision ? map.revision : 0
 	}
 
 	String toString() {
