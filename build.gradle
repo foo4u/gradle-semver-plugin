@@ -2,7 +2,42 @@ apply plugin: 'groovy'
 apply plugin: 'maven'
 
 dependencies {
-    compile gradleApi()
-    compile localGroovy()
+	compile gradleApi()
+	compile localGroovy()
 }
 
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			repository(url: "http://repo.fugu.io/artifactory/plugins-release-local") {
+				authentication(userName: project.ext.repoUser, password: project.ext.repoPass)
+			}
+			snapshotRepository(url: "http://repo.fugu.io/artifactory/plugins-snapshot-local") {
+				authentication(userName: project.ext.repoUser, password: project.ext.repoPass)
+			}
+			pom.project {
+				name 'Gradle Semantic Version Plugin'
+				description 'Gradle plugin providing semantic versioning compliance'
+				url 'https://github.com/foo4u/gradle-semver-plugin'
+				inceptionYear '2013'
+				licenses {
+					license {
+						name 'Apache 2.0'
+						url 'http://www.apache.org/licenses/LICENSE-2.0.html'
+						distribution 'repo'
+					}
+				}
+				developers {
+					developer {
+						id 'foo4u'
+						name 'Scott Rossillo'
+						email 'scott at rossillo.net'
+						roles {
+							role 'Project Lead'
+						}
+					}
+				}
+			}
+		}
+	}
+}
