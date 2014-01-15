@@ -7,7 +7,7 @@ implementation of semantic versioning exposes version configuration to the proje
 ## Why Semantic Versioning?
 
 Software projects often depend on a number of other projects, packages or libraries.  However,
-software development in an evolutionary process, projects and their dependencies change over time.
+software development is an evolutionary process, projects and their dependencies change over time.
 Releasing new versions of your project requires you to communicate how your new version will
 affect its users.
 
